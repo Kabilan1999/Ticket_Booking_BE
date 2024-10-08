@@ -1,5 +1,6 @@
 const whitelistedDomains = [
   "https://www.youtube.com/",
+  "http://localhost:3000",
   "http://localhost:3500/",
 ];
 const customCorsOptions = {

@@ -24,7 +24,9 @@ const createNewAdmin = async (req, res) => {
         password: req.body.password,
         modifiedAt: Date.now(),
       };
-      const existingUser = await adminModel.findOne({ userName: req.body.userName });
+      const existingUser = await adminModel.findOne({
+        userName: req.body.userName,
+      });
       if (existingUser) {
         return res.status(400).json({
           errorMessage: "Name already exists. Please choose a unique name.",
@@ -76,8 +78,29 @@ const deleteAdmin = async (req, res) => {
   }
 };
 
+const adminCheck = async (req, res) => {
+  try {
+    const existingUser = await adminModel.findOne({
+      userName: req.body.userName,
+      password: req.body.password,
+    });
+    if (existingUser) {
+      res.status(200).json({
+        isAdmin: true,
+      });
+    } else {
+      res.status(200).json({
+        isAdmin: false,
+      });
+    }
+  } catch (error) {
+    res.status(404).json({ errorMessage: error.message });
+  }
+};
+
 module.exports = {
   getAllAdmin,
   createNewAdmin,
   deleteAdmin,
+  adminCheck,
 };

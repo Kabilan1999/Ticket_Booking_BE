@@ -14,3 +14,5 @@
 20241008	11:31:09	5565de60-654f-4b3b-bfb4-7c4359c7f2a1	Error:Request from unauthorized origin
 20241008	11:32:24	1906024f-0ec0-4084-b8d3-2fcdfb3cd381	Error:Request from unauthorized origin
 20241008	11:37:28	a1983ee9-2f99-494c-952b-58087fdbc88a	Error:Request from unauthorized origin
+20241026	17:30:22	50700b10-f5c0-41af-98d5-5f0cc5171659	TypeError:Cannot read properties of undefined (reading 'split')
+20241026	17:30:25	ddaa20c2-9452-4ae4-be43-9fc26d84d411	TypeError:Cannot read properties of undefined (reading 'split')

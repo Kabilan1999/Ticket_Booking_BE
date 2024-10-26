@@ -8,6 +8,6 @@ router
   .post(adminController.createNewAdmin)
   .delete(adminController.deleteAdmin);
 
-router.route("/authorise").post(adminController.adminCheck);
+router.route("/authorise").post( adminController.adminCheck);
 
 module.exports = router;

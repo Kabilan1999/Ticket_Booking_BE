@@ -1,18 +1,12 @@
 const mongoose = require("mongoose");
-const adminSchema = new mongoose.Schema({
-  id: { type: Number, required: true, unique: true },
-  userName: {
+const movieSchema = new mongoose.Schema({
+  movieName: {
     type: String,
     required: true,
     unique: true,
   },
-  password: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
+  releaseDatedate: {
+    type: Date,
   },
   createdAt: { type: Date, immutable: true },
   modifiedAt: { type: Date, default: () => Date.now() },
@@ -21,6 +15,6 @@ const adminSchema = new mongoose.Schema({
 //   return `Mr. ${this.name}`;
 // });
 // Create a model
-const adminModel = mongoose.model("admin", adminSchema);
+const movieModel = mongoose.model("movie", movieSchema);
 
-module.exports = adminModel;
+module.exports = movieModel;

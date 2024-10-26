@@ -15,6 +15,7 @@ app.use(express.json()); // To handle json data
 connectToASKDb();
 app.use("/", express.static(path.join(__dirname, "./assets")));
 app.use("/admin", require("./routes/api/admin"));
+app.use("/movies", require("./routes/api/movie"));
 app.use("/", require("./routes/root"));
 
 app.all("*", (req, res) => {
